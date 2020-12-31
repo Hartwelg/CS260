@@ -1,0 +1,10 @@
+assign2.exe: Address.o AddressLinkedList.o main.o
+	g++ -std=c++11 -o assign2.exe Address.o AddressLinkedList.o main.o
+Address.o: Address.cpp
+	g++ Address.cpp -std=c++11 -c
+AddressLinkedList.o: AddressLinkedList.cpp
+	g++ AddressLinkedList.cpp -std=c++11 -c
+main.o: main.cpp ArrayList.h AddressArrayList.h
+	g++ main.cpp -std=c++11 -c main.cpp
+clean:
+	del main.o Address.o AddressLinkedList.o assign2.exe

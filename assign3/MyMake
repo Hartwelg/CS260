@@ -1,0 +1,22 @@
+all: Assign3Main.exe HTMLParse.exe WordLadder.exe
+
+Assign3Main.exe: Assign3Main.o
+	g++ assign3Main.o -std=c++11 -o Assign3Main.exe
+	
+HTMLParse.exe: HTMLParse.o
+	g++ HTMLParse.o -std=c++11 -o HTMLParse.exe
+	
+WordLadder.exe: WordLadder.o
+	g++ WordLadder.o -std=c++11 -o WordLadder.exe
+	
+Assign3Main.o: assign3Main.cpp Stack.h Queue.h
+	g++ -std=c++11 -c assign3Main.cpp
+	
+HTMLParse.o: HTMLParse.cpp Stack.h
+	g++ -std=c++11 -c HTMLParse.cpp
+	
+WordLadder.o: WordLadder.cpp Queue.h
+	g++ -std=c++11 -c WordLadder.cpp
+	
+clean: 
+	del HTMLParse.exe Assign3Main.exe WordLadder.exe HTMLParse.o Assign3Main.o WordLadder.o
