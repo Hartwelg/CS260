@@ -1,0 +1,6 @@
+Assign4.exe: Assign4.o
+	g++ Assign4.o -std=c++11 -o Assign4.exe
+Assign4.o: main.cpp MySet.h
+	g++ -std=c++11 -c main.cpp -o Assign4.o
+clean:
+	del Assign4.o Assign4.exe
